@@ -6,13 +6,20 @@ namespace OOD.FactoryClass11
     {
         static void Main(string[] args)
         {
-            var fighterPlane = new FighterPlaneFactory();
-            var fighter = fighterPlane.CreatePlane("f16");
-            fighter.Fly();
-            fighter.DropBomb();
-            fighter.FireMachineGun(10);
-            fighter.FireMissile(3);
-            fighter.Land();
+            while (true)
+            {
+                var option = Console.ReadLine();
+                var fighter = FighterPlaneFactory.CreatePlane(option);
+                fighter.Fly();
+                fighter.DropBomb();
+                fighter.FireMachineGun(10);
+                fighter.FireMissile(3);
+                fighter.Land();
+                Console.WriteLine();
+                Console.WriteLine("Press 'Enter' for menu.");
+                Console.ReadLine();
+                Console.Clear();
+            }
         }
     }
 }
